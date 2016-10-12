@@ -37,4 +37,15 @@ styles.xml, we can define font attribute in it
 StateListDrawable (change button bg color)
 ColorStateList (change text color)
 
-###7
+###7 Implementing Selector Using StateListDrawable
+create button_background_selector.xml
+```
+<selector>
+<item android:state_pressed="true" android:drawable="@drawable/pressed"/>   <!--omit extension, such as jpeg-->
+<item android:drawable="@drawabledefault"/>  <!-- default case-->
+</selector>
+```
+activity_main.xml
+```
+<Button android:background="@drawable/button_background_selector"../>
+```
