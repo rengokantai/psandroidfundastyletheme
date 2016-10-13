@@ -80,3 +80,39 @@ shadow
 ```
 <TextView android:shadowDx="100" android:shadowDy="100" android:shadowRadius="10"/>
 ```
+
+##4. Using the Concept of Inheritance for Styling Views
+###2 Explicit Inheritance vs Implicit Inheritance
+parent style
+```
+<style name="parent" />
+```
+explicit inheritance
+```
+<style name="child" parent="parent"/>
+```
+implicit
+```
+<style name="parent.child"/>
+```
+###4 Implementing Implicit Inheritance
+res/values/my_styles.xml
+```
+<resources>
+<style name="AppFont"></style>
+<style name="AppFont.Child"></style>
+<style name="AppFont.Child.Child2"></style>
+</resuorces>
+```
+use
+```
+<Button style="@style/LargeText" />
+```
+###8 When Should We Define a Style for a View?
+No.  
+
+##5. Applying Themes
+###2 Why Theming?
+Theme.AppConpat (7+)  
+Theme.Material (21+)
+###3 Selecting and Applying a Theme
