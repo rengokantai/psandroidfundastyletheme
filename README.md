@@ -132,7 +132,7 @@ Theme.Material (21+)
 
 
 
-##6.
+##6. Maintaining Backward Compatibility
 ###1 Why Backward Compatibility?
 
 V7
@@ -149,3 +149,57 @@ Theme.AppCompat.NoActionBar
 @android:style/Theme.Material.Light.DarkActionBar
 @android:style/Theme.Material.NoActionBar
 ```
+###2 Understanding the Problem Statement
+res/styles.xml
+```
+<resources>
+<style name="MyAppTheme" parent="">
+  <item name="android:windowActivityTransitions">true</item>
+</style>
+</resources>
+```
+
+MainActivity.java
+```
+public void moveToSecondActivity(View view){
+  Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+  ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);  //require api21
+  startActivity(intent,options.toBundle());
+}
+```
+SecondActiviy.java
+```
+protected void onCreate(Bundle savedInstanceState){
+  setContentView(R.layout.activity_secod);
+  Explode explode = new Explode();
+  explode.setDuration(1000);
+  getWindow.setEnterTransition(explode);
+}
+```
+
+###3 Maintaining Compatibility by XML and Java Code
+>=21, folders
+```
+drawable
+values
+layout
+```
+< 21, folders
+```
+drawable
+drawable-v21
+values
+values-v21
+```
+
+java:
+```
+if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){}
+```
+
+
+###4 Implementing Backward Compatibility by XML and Java Code
+
+
+##7. Exploring Practical Usage of Styles and Themes
+###2 Initial Project Setup
