@@ -116,3 +116,36 @@ No.
 Theme.AppConpat (7+)  
 Theme.Material (21+)
 ###3 Selecting and Applying a Theme
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##6.
+###1 Why Backward Compatibility?
+
+V7
+```
+Theme.AppCompat(dark)
+Theme.AppCompatLight(light)
+Theme.AppCompat.Light.DarkActionBar
+Theme.AppCompat.NoActionBar
+```
+21+ (minSDKVersion >=21)
+```
+@android:style/Theme.Material
+@android:style/Theme.Material.Light
+@android:style/Theme.Material.Light.DarkActionBar
+@android:style/Theme.Material.NoActionBar
+```
